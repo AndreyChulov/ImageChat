@@ -19,14 +19,16 @@ namespace ImageChat.Server.Server
         {
             var socket = new Socket(SocketType.Dgram, ProtocolType.Udp);
 
+            socket.EnableBroadcast = true;
             socket.Bind(new IPEndPoint(IPAddress.Any, _bindingPort));
+            
             
             return socket;
         }
 
         protected override void ServiceWorkerLoop(Socket serviceSocket)
         {
-            if (serviceSocket.Available > 0)
+            if (serviceSocket.Available > 1)
             {
                 Task.Delay(100).Wait();
             }
