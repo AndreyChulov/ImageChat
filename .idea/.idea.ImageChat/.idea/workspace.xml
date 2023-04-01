@@ -6,12 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c49b247e-3bbd-4fbf-a284-e26f34f9013f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ImageChat.Client/Client/BaseThreadService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Shared/BaseThreadService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageChat.Client/Client/ServerLocatorReceiverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/Client/ServerLocatorReceiverService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageChat.Client/Client/ServerLocatorSenderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/Client/ServerLocatorSenderService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageChat.Client/Client/SocketAsyncState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Shared/SocketAsyncState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageChat.Client/ImageChat.Client.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/ImageChat.Client.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageChat.Server/ImageChat.Server.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/ImageChat.Server.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageChat.Shared/Constants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorReceiverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorReceiverService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorSenderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorSenderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Shared/ImageChat.Shared.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Shared/ImageChat.Shared.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680369793175</updated>
-      <workItem from="1680369796581" duration="5643000" />
+      <workItem from="1680369796581" duration="6347000" />
     </task>
     <servers />
   </component>
