@@ -10,3 +10,4 @@ Z:\Мой диск\GitHub\ImageChat\ImageChatClient\obj\Debug\ImageChatClient.cs
 Z:\Мой диск\GitHub\ImageChat\ImageChatClient\obj\Debug\ImageChatClient.csproj.CopyComplete
 Z:\Мой диск\GitHub\ImageChat\ImageChatClient\obj\Debug\ImageChatClient.exe
 Z:\Мой диск\GitHub\ImageChat\ImageChatClient\obj\Debug\ImageChatClient.pdb
+Z:\Мой диск\GitHub\ImageChat\ImageChatClient\obj\Debug\ImageChatClient.ImageChatClientForm.resources

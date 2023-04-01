@@ -7,3 +7,4 @@ Z:\Мой диск\GitHub\ImageChat\ImageChatServer\obj\Debug\ImageChatServer.cs
 Z:\Мой диск\GitHub\ImageChat\ImageChatServer\obj\Debug\ImageChatServer.csproj.CoreCompileInputs.cache
 Z:\Мой диск\GitHub\ImageChat\ImageChatServer\obj\Debug\ImageChatServer.exe
 Z:\Мой диск\GitHub\ImageChat\ImageChatServer\obj\Debug\ImageChatServer.pdb
+Z:\Мой диск\GitHub\ImageChat\ImageChatServer\obj\Debug\ImageChatServer.ImageChatServerForm.resources

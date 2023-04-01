@@ -6,8 +6,8 @@ namespace ImageChatClient.Client
     public class ServerLocatorService : IDisposable
     {
         private List<string> _servers;
-        private ServerLocatorSenderService _serverLocatorSenderService;
-        private ServerLocatorReceiverService _serverLocatorReceiverService;
+        private readonly ServerLocatorSenderService _serverLocatorSenderService;
+        private readonly ServerLocatorReceiverService _serverLocatorReceiverService;
 
         public ServerLocatorService()
         {
