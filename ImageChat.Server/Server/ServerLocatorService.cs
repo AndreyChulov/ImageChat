@@ -12,7 +12,7 @@ namespace ImageChat.Server.Server
         public ServerLocatorService()
         {
             _servers = new List<string>();
-            _serverLocatorSenderService = new ServerLocatorSenderService(TimeSpan.FromSeconds(0.5f), 11111);
+            _serverLocatorSenderService = new ServerLocatorSenderService(TimeSpan.FromSeconds(0.5f));
             _serverLocatorReceiverService = new ServerLocatorReceiverService(TimeSpan.FromSeconds(0.5f));
         }
 

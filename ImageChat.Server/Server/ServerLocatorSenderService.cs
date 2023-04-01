@@ -11,9 +11,9 @@ namespace ImageChat.Server.Server
     {
         private readonly int _broadcastPort;
         
-        public ServerLocatorSenderService(TimeSpan loopDelay, int broadcastPort) : base(loopDelay)
+        public ServerLocatorSenderService(TimeSpan loopDelay) : base(loopDelay)
         {
-            _broadcastPort = broadcastPort;
+            _broadcastPort = Constants.ServerLocatorBroadcastPort;
         }
         
         protected override Socket CreateServiceSocket()
