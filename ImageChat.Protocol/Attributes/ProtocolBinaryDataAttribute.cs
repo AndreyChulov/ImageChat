@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ChatProtocol.Attributes
+namespace ImageChat.Protocol.Attributes
 {
     public class ProtocolBinaryDataAttribute : Attribute
     {

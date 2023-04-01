@@ -2,7 +2,7 @@
 using System.IO;
 using System.Net.Sockets;
 
-namespace ChatProtocol.Utilities
+namespace ImageChat.Protocol.Utilities
 {
     internal static class SocketStringSender
     {

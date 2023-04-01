@@ -3,7 +3,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using ChatProtocol;
+using ImageChat.Protocol;
 
 namespace ImageChatClient.Client
 {

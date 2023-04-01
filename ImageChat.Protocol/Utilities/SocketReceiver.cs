@@ -1,7 +1,7 @@
 ﻿using System.Net.Sockets;
 using System.Threading;
 
-namespace ChatProtocol.Utilities
+namespace ImageChat.Protocol.Utilities
 {
     internal static class SocketReceiver
     {

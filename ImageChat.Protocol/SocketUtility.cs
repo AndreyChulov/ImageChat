@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Net.Sockets;
-using ChatProtocol.Utilities;
+using ImageChat.Protocol.Utilities;
 
-namespace ChatProtocol
+namespace ImageChat.Protocol
 {
     public static class SocketUtility
     {
