@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageChat.Server", "ImageChat.Server\ImageChat.Server.csproj", "{8BC0F44D-C2F2-4DC1-AC3F-FD5924C708BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageChatClient", "ImageChatClient\ImageChatClient.csproj", "{9A411D1D-AEC8-4474-8BE7-D37078D411BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageChat.Client", "ImageChat.Client\ImageChat.Client.csproj", "{9A411D1D-AEC8-4474-8BE7-D37078D411BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageChat.Protocol", "ImageChat.Protocol\ImageChat.Protocol.csproj", "{425DBC4E-9EB0-476F-B5E2-6A35E6684F84}"
 EndProject

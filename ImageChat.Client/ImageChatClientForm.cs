@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ImageChatClient
+namespace ImageChat.Client
 {
     public partial class ImageChatClientForm : Form
     {

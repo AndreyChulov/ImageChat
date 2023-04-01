@@ -2,7 +2,7 @@
 using System.Net.Sockets;
 using System.Threading;
 
-namespace ImageChatClient.Client
+namespace ImageChat.Client.Client
 {
     public class ServerLocatorReceiverService : BaseThreadService
     {

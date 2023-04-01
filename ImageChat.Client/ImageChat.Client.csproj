@@ -6,8 +6,8 @@
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
         <ProjectGuid>{9A411D1D-AEC8-4474-8BE7-D37078D411BF}</ProjectGuid>
         <OutputType>WinExe</OutputType>
-        <RootNamespace>ImageChatClient</RootNamespace>
-        <AssemblyName>ImageChatClient</AssemblyName>
+        <RootNamespace>ImageChat.Client</RootNamespace>
+        <AssemblyName>ImageChat.Client</AssemblyName>
         <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

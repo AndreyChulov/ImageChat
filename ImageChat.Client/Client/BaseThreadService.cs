@@ -3,7 +3,7 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ImageChatClient.Client
+namespace ImageChat.Client.Client
 {
     public abstract class BaseThreadService : IDisposable
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ImageChatClient.Client
+namespace ImageChat.Client.Client
 {
     public class ServerLocatorService : IDisposable
     {

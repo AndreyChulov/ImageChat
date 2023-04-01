@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ImageChatClient.Properties
+namespace ImageChat.Client.Properties
 {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
@@ -45,7 +45,7 @@ namespace ImageChatClient.Properties
                 if ((resourceMan == null))
                 {
                     global::System.Resources.ResourceManager temp =
-                        new global::System.Resources.ResourceManager("ImageChatClient.Properties.Resources",
+                        new global::System.Resources.ResourceManager("ImageChat.Client.Properties.Resources",
                             typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
