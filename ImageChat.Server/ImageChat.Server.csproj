@@ -81,5 +81,15 @@
     <ItemGroup>
         <None Include="App.config" />
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\ImageChat.Protocol\ImageChat.Protocol.csproj">
+        <Project>{425dbc4e-9eb0-476f-b5e2-6a35e6684f84}</Project>
+        <Name>ImageChat.Protocol</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\ImageChat.Shared\ImageChat.Shared.csproj">
+        <Project>{cc806bb9-8cec-4e88-bac4-02e400f8a239}</Project>
+        <Name>ImageChat.Shared</Name>
+      </ProjectReference>
+    </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

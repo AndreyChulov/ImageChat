@@ -2,7 +2,7 @@
 using System.Net.Sockets;
 using System.Threading;
 
-namespace ImageChat.Client.Client
+namespace ImageChat.Shared
 {
     public class SocketAsyncState : IDisposable
     {

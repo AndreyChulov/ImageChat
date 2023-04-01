@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using ImageChat.Protocol;
+using ImageChat.Shared;
 
 namespace ImageChat.Client.Client
 {
