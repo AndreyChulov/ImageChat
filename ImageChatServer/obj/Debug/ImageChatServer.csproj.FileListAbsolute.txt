@@ -1,0 +1,9 @@
+Z:\Мой диск\GitHub\ImageChat\ImageChatServer\bin\Debug\ImageChatServer.exe.config
+Z:\Мой диск\GitHub\ImageChat\ImageChatServer\bin\Debug\ImageChatServer.exe
+Z:\Мой диск\GitHub\ImageChat\ImageChatServer\bin\Debug\ImageChatServer.pdb
+Z:\Мой диск\GitHub\ImageChat\ImageChatServer\obj\Debug\ImageChatServer.csprojAssemblyReference.cache
+Z:\Мой диск\GitHub\ImageChat\ImageChatServer\obj\Debug\ImageChatServer.Properties.Resources.resources
+Z:\Мой диск\GitHub\ImageChat\ImageChatServer\obj\Debug\ImageChatServer.csproj.GenerateResource.cache
+Z:\Мой диск\GitHub\ImageChat\ImageChatServer\obj\Debug\ImageChatServer.csproj.CoreCompileInputs.cache
+Z:\Мой диск\GitHub\ImageChat\ImageChatServer\obj\Debug\ImageChatServer.exe
+Z:\Мой диск\GitHub\ImageChat\ImageChatServer\obj\Debug\ImageChatServer.pdb

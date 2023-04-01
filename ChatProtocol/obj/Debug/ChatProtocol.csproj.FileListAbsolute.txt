@@ -1,0 +1,6 @@
+Z:\Мой диск\GitHub\ImageChat\ChatProtocol\bin\Debug\ChatProtocol.dll
+Z:\Мой диск\GitHub\ImageChat\ChatProtocol\bin\Debug\ChatProtocol.pdb
+Z:\Мой диск\GitHub\ImageChat\ChatProtocol\obj\Debug\ChatProtocol.csprojAssemblyReference.cache
+Z:\Мой диск\GitHub\ImageChat\ChatProtocol\obj\Debug\ChatProtocol.csproj.CoreCompileInputs.cache
+Z:\Мой диск\GitHub\ImageChat\ChatProtocol\obj\Debug\ChatProtocol.dll
+Z:\Мой диск\GitHub\ImageChat\ChatProtocol\obj\Debug\ChatProtocol.pdb
