@@ -6,11 +6,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c49b247e-3bbd-4fbf-a284-e26f34f9013f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ImageChat.Shared/Constants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ImageChat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ImageChat/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Client/bin/Debug/ImageChat.Client.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/bin/Debug/ImageChat.Client.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Client/bin/Debug/ImageChat.Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/bin/Debug/ImageChat.Client.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Client/obj/Debug/ImageChat.Client.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/obj/Debug/ImageChat.Client.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Protocol/bin/Debug/ImageChat.Protocol.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Protocol/bin/Debug/ImageChat.Protocol.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Protocol/bin/Debug/ImageChat.Protocol.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Protocol/bin/Debug/ImageChat.Protocol.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorReceiverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorReceiverService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorSenderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorSenderService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageChat.Shared/ImageChat.Shared.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Shared/ImageChat.Shared.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Server/bin/Debug/ImageChat.Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/bin/Debug/ImageChat.Server.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Server/bin/Debug/ImageChat.Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/bin/Debug/ImageChat.Server.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +58,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Project.ImageChatClient">
+  <component name="RunManager" selected=".NET Project.ImageChatServer">
     <configuration name="ImageChatClient" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -100,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680369793175</updated>
-      <workItem from="1680369796581" duration="6347000" />
+      <workItem from="1680369796581" duration="6660000" />
     </task>
     <servers />
   </component>
@@ -110,5 +114,37 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorReceiverService.cs</url>
+          <line>30</line>
+          <properties documentPath="Z:\Мой диск\GitHub\ImageChat\ImageChat.Server\Server\ServerLocatorReceiverService.cs" initialLine="30" containingFunctionPresentation="method 'ServiceWorkerLoop'">
+            <startOffsets>
+              <option value="859" />
+            </startOffsets>
+            <endOffsets>
+              <option value="882" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageChat.Client/Client/ServerLocatorSenderService.cs</url>
+          <line>25</line>
+          <properties documentPath="Z:\Мой диск\GitHub\ImageChat\ImageChat.Client\Client\ServerLocatorSenderService.cs" initialLine="25" containingFunctionPresentation="method 'CreateServiceSocket'">
+            <startOffsets>
+              <option value="692" />
+            </startOffsets>
+            <endOffsets>
+              <option value="746" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

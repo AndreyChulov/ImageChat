@@ -1,0 +1,6 @@
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Protocol\bin\Debug\ImageChat.Protocol.dll
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Protocol\bin\Debug\ImageChat.Protocol.pdb
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Protocol\obj\Debug\ImageChat.Protocol.csprojAssemblyReference.cache
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Protocol\obj\Debug\ImageChat.Protocol.csproj.CoreCompileInputs.cache
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Protocol\obj\Debug\ImageChat.Protocol.dll
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Protocol\obj\Debug\ImageChat.Protocol.pdb

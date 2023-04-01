@@ -4,7 +4,7 @@ namespace ImageChat.Server
 {
     public partial class ImageChatServerForm
     {
-        private readonly ServerLocatorService_old _serverLocatorService 
-            = new ServerLocatorService_old();
+        private readonly ServerLocatorService _serverLocatorService 
+            = new ServerLocatorService();
     }
 }

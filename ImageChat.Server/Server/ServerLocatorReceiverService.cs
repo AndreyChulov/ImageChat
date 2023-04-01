@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading.Tasks;
 using ImageChat.Shared;
 
 namespace ImageChat.Server.Server
@@ -25,6 +26,10 @@ namespace ImageChat.Server.Server
 
         protected override void ServiceWorkerLoop(Socket serviceSocket)
         {
+            if (serviceSocket.Available > 0)
+            {
+                Task.Delay(100).Wait();
+            }
             //throw new NotImplementedException();
         }
     }

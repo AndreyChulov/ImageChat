@@ -1,0 +1,15 @@
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Client\bin\Debug\ImageChat.Client.exe.config
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Client\bin\Debug\ImageChat.Client.exe
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Client\bin\Debug\ImageChat.Client.pdb
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Client\bin\Debug\ImageChat.Protocol.dll
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Client\bin\Debug\ImageChat.Shared.dll
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Client\bin\Debug\ImageChat.Protocol.pdb
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Client\bin\Debug\ImageChat.Shared.pdb
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Client\obj\Debug\ImageChat.Client.csprojAssemblyReference.cache
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Client\obj\Debug\ImageChat.Client.ImageChatClientForm.resources
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Client\obj\Debug\ImageChat.Client.Properties.Resources.resources
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Client\obj\Debug\ImageChat.Client.csproj.GenerateResource.cache
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Client\obj\Debug\ImageChat.Client.csproj.CoreCompileInputs.cache
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Client\obj\Debug\ImageChat.Client.csproj.CopyComplete
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Client\obj\Debug\ImageChat.Client.exe
+Z:\Мой диск\GitHub\ImageChat\ImageChat.Client\obj\Debug\ImageChat.Client.pdb
