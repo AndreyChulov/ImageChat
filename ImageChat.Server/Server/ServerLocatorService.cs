@@ -5,7 +5,7 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ImageChatServer.Server
+namespace ImageChat.Server.Server
 {
     public class ServerLocatorService : IDisposable
     {

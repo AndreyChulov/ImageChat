@@ -1,4 +1,4 @@
-﻿namespace ImageChatServer
+﻿namespace ImageChat.Server
 {
     partial class ImageChatServerForm
     {

@@ -24,6 +24,7 @@ namespace ImageChatClient
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            _serverLocatorService.Stop();
             _serverLocatorService.Dispose();
         }
     }

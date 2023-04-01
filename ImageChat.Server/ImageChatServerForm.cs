@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace ImageChatServer
+namespace ImageChat.Server
 {
     public partial class ImageChatServerForm : Form
     {

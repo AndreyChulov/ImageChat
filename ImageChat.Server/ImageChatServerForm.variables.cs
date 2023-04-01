@@ -1,6 +1,6 @@
-﻿using ImageChatServer.Server;
+﻿using ImageChat.Server.Server;
 
-namespace ImageChatServer
+namespace ImageChat.Server
 {
     public partial class ImageChatServerForm
     {
