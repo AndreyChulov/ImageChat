@@ -55,7 +55,10 @@
         <Compile Include="ImageChatServerForm.variables.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Server\ServerLocatorReceiverService.cs" />
+        <Compile Include="Server\ServerLocatorSenderService.cs" />
         <Compile Include="Server\ServerLocatorService.cs" />
+        <Compile Include="Server\ServerLocatorService_old.cs" />
         <EmbeddedResource Include="ImageChatServerForm.resx">
           <DependentUpon>ImageChatServerForm.cs</DependentUpon>
         </EmbeddedResource>
