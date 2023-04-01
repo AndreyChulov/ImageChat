@@ -46,6 +46,10 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Client\SocketAsyncState.cs" />
+        <Compile Include="Client\BaseThreadService.cs" />
+        <Compile Include="Client\ServerLocatorReceiverService.cs" />
+        <Compile Include="Client\ServerLocatorSenderService.cs" />
         <Compile Include="Client\ServerLocatorService.cs" />
         <Compile Include="ImageChatClientForm.cs">
             <SubType>Form</SubType>
