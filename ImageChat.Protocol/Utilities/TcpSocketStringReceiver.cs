@@ -4,7 +4,7 @@ using System.Net.Sockets;
 
 namespace ImageChat.Protocol.Utilities
 {
-    internal static class SocketStringReceiver
+    internal static class TcpSocketStringReceiver
     {
         public static string ReceiveString(Socket socket, 
             Action onReceiveDataSizeCheckFail, Action onReceiveDataCheckFail)
@@ -43,7 +43,7 @@ namespace ImageChat.Protocol.Utilities
             Socket socket, Stream dataStream, int bufferSize,
             Action onReceiveDataCheckFail)
         {
-            SocketReceiver.WaitDataFromSocket(socket, bufferSize);
+            TcpSocketReceiver.WaitDataFromSocket(socket, bufferSize);
 
             byte[] dataBuffer = new byte[bufferSize];
             var receivedBufferSize = socket.Receive(dataBuffer);
@@ -59,7 +59,7 @@ namespace ImageChat.Protocol.Utilities
         private static long ReceiveDataSize(Socket socket, Stream dataStream, 
             BinaryReader dataStreamReader, Action onReceiveDataCheckFail)
         {
-            SocketReceiver.WaitDataFromSocket(socket, sizeof(long));
+            TcpSocketReceiver.WaitDataFromSocket(socket, sizeof(long));
 
             byte[] dataBuffer = new byte[sizeof(long)];
             var receivedBufferSize = socket.Receive(dataBuffer);

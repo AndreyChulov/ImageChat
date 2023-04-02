@@ -20,7 +20,7 @@ namespace ImageChat.Server.Server
         {
             var socket = new Socket(SocketType.Dgram, ProtocolType.Udp);
 
-            socket.EnableBroadcast = true;
+            /*socket.EnableBroadcast = true;
             
             IPAddress broadcastAddress = CreateBroadcastAddress();
             IPEndPoint broadcastIpEndPoint = new IPEndPoint(broadcastAddress, _broadcastPort);
@@ -30,7 +30,7 @@ namespace ImageChat.Server.Server
                 socket.BeginConnect(broadcastIpEndPoint, BeginConnectCallback, socketAsyncState);
                 
                 socketAsyncState.ManualResetEvent.WaitOne();
-            }
+            }*/
             
             return socket;
         }
@@ -52,7 +52,7 @@ namespace ImageChat.Server.Server
 
         protected override void ServiceWorkerLoop(Socket serviceSocket)
         {
-            SocketUtility.SendString(serviceSocket, "Follow the white rabbit!", () => { });
+            //SocketUtility.SendString(serviceSocket, "Follow the white rabbit!", () => { });
         }
 
         private static IPAddress CreateBroadcastAddress()

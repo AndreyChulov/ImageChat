@@ -4,7 +4,7 @@ namespace ImageChat.Client
 {
     public partial class ImageChatClientForm
     {
-        private ServerLocatorService _serverLocatorService 
+        private readonly ServerLocatorService _serverLocatorService 
             = new ServerLocatorService();
     }
 }

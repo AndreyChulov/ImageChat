@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Threading;
 using ImageChat.Protocol;
 using ImageChat.Shared;
 
@@ -10,29 +9,30 @@ namespace ImageChat.Client.Client
 {
     public class ServerLocatorSenderService : BaseThreadService
     {
-        private readonly int _broadcastPort;
+        private readonly IPEndPoint _broadcastIpEndPoint;
+        private readonly byte[] _broadcastDatagram;
         
         public ServerLocatorSenderService(TimeSpan loopDelay, int broadcastPort) : base(loopDelay)
         {
-            _broadcastPort = broadcastPort;
+            IPAddress broadcastAddress = CreateBroadcastAddress();
+            
+            _broadcastIpEndPoint = new IPEndPoint(broadcastAddress, broadcastPort);
+            
+            _broadcastDatagram =
+                UdpSocketUtility.PrepareDatagramForSendingString(
+                    Constants.UdpDatagramSize, 
+                    "Follow the white rabbit!",
+                    () => throw new ArgumentOutOfRangeException(
+                        $"Can not send string [Follow the white rabbit!], data size exceeds datagram size")
+                );
         }
         
         protected override Socket CreateServiceSocket()
         {
-            var socket = new Socket(SocketType.Dgram, ProtocolType.Udp);
+            var socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
 
             socket.EnableBroadcast = true;
-            
-            IPAddress broadcastAddress = CreateBroadcastAddress();
-            IPEndPoint broadcastIpEndPoint = new IPEndPoint(broadcastAddress, _broadcastPort);
 
-            using (SocketAsyncState socketAsyncState = new SocketAsyncState(socket))
-            {
-                socket.BeginConnect(broadcastIpEndPoint, BeginConnectCallback, socketAsyncState);
-                
-                socketAsyncState.ManualResetEvent.WaitOne();
-            }
-            
             return socket;
         }
 
@@ -53,7 +53,23 @@ namespace ImageChat.Client.Client
 
         protected override void ServiceWorkerLoop(Socket serviceSocket)
         {
-            SocketUtility.SendString(serviceSocket, "Follow the white rabbit!", () => { });
+            serviceSocket.BeginSendTo(_broadcastDatagram, 0, Constants.UdpDatagramSize, SocketFlags.None, 
+                _broadcastIpEndPoint, SendToCallback,serviceSocket);
+        }
+
+        private void SendToCallback(IAsyncResult asyncData)
+        {
+            var serviceSocket = (Socket)asyncData.AsyncState;
+
+            try
+            {
+                serviceSocket.EndSendTo(asyncData);
+            }
+            catch (ObjectDisposedException)// callback called while dispose/close call
+            {
+            }
+            
+            Console.WriteLine($@"{DateTime.Now.ToLongTimeString()} -> [ServerLocatorSenderService] broadcast message sent to image chat server.");
         }
 
         private static IPAddress CreateBroadcastAddress()

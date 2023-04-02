@@ -2,6 +2,7 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
+using ImageChat.Protocol;
 using ImageChat.Shared;
 
 namespace ImageChat.Server.Server
@@ -17,7 +18,7 @@ namespace ImageChat.Server.Server
 
         protected override Socket CreateServiceSocket()
         {
-            var socket = new Socket(SocketType.Dgram, ProtocolType.Udp);
+            var socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
 
             socket.EnableBroadcast = true;
             socket.Bind(new IPEndPoint(IPAddress.Any, _bindingPort));
@@ -28,11 +29,15 @@ namespace ImageChat.Server.Server
 
         protected override void ServiceWorkerLoop(Socket serviceSocket)
         {
-            if (serviceSocket.Available > 1)
+            if (serviceSocket.Available == 0)
             {
-                Task.Delay(100).Wait();
+                return;
             }
-            //throw new NotImplementedException();
+
+            byte[] buffer = new byte[Constants.UdpDatagramSize];
+            int size = serviceSocket.Receive(buffer);
+            string message = UdpSocketUtility.GetStringFromDatagram(buffer);
+            Console.WriteLine($@"Server received broadcast message [{message}]");
         }
     }
 }

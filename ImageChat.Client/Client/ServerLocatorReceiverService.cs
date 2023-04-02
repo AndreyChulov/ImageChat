@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using ImageChat.Shared;
@@ -13,7 +14,9 @@ namespace ImageChat.Client.Client
 
         protected override Socket CreateServiceSocket()
         {
-            return new Socket(SocketType.Dgram, ProtocolType.Udp);
+            var socket = new Socket(SocketType.Dgram, ProtocolType.Udp);
+            //socket.Bind(new IPEndPoint(IPAddress.Loopback, 22222));
+            return socket;
         }
 
         protected override void ServiceWorkerLoop(Socket serviceSocket)

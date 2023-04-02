@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,9 +15,18 @@ namespace ImageChat.Client
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ImageChatClientForm());
+            using (FileStream consoleStream = new FileStream("client_console.log", FileMode.Create))
+            using (TextWriter consoleWriter = new StreamWriter(consoleStream))
+            {
+                Console.SetOut(consoleWriter);
+                
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new ImageChatClientForm());
+                
+                consoleWriter.Flush();
+                consoleStream.Flush();
+            }
         }
     }
 }

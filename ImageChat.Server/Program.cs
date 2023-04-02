@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using ImageChat.Server;
 
@@ -12,9 +13,18 @@ namespace ImageChat.Server
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ImageChatServerForm());
+            using (FileStream consoleStream = new FileStream("server_console.log", FileMode.Create))
+            using (TextWriter consoleWriter = new StreamWriter(consoleStream))
+            {
+                Console.SetOut(consoleWriter);
+                
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new ImageChatServerForm());
+                
+                consoleWriter.Flush();
+                consoleStream.Flush();
+            }
         }
     }
 }

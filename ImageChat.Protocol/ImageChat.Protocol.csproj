@@ -41,10 +41,14 @@
         <Compile Include="Attributes\ProtocolBinaryDataAttribute.cs" />
         <Compile Include="Attributes\ProtocolStringDataAttribute.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="SocketUtility.cs" />
-        <Compile Include="Utilities\SocketReceiver.cs" />
-        <Compile Include="Utilities\SocketStringReceiver.cs" />
-        <Compile Include="Utilities\SocketStringSender.cs" />
+        <Compile Include="TcpSocketUtility.cs" />
+        <Compile Include="UdpSocketUtility.cs" />
+        <Compile Include="Utilities\SocketSender.cs" />
+        <Compile Include="Utilities\TcpSocketReceiver.cs" />
+        <Compile Include="Utilities\TcpSocketStringReceiver.cs" />
+        <Compile Include="Utilities\TcpSocketStringSender.cs" />
+        <Compile Include="Utilities\UdpSocketStringReceiver.cs" />
+        <Compile Include="Utilities\UdpSocketStringSender.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

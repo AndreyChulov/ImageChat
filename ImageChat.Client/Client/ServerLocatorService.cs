@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ImageChat.Shared;
 
 namespace ImageChat.Client.Client
 {
@@ -12,26 +13,27 @@ namespace ImageChat.Client.Client
         public ServerLocatorService()
         {
             _servers = new List<string>();
-            _serverLocatorSenderService = new ServerLocatorSenderService(TimeSpan.FromSeconds(0.5f), 11111);
+            _serverLocatorSenderService = new ServerLocatorSenderService(
+                Constants.ServerLocatorBroadcastDatagramSendTimeout, Constants.ServerLocatorBroadcastPort);
             _serverLocatorReceiverService = new ServerLocatorReceiverService(TimeSpan.FromSeconds(0.5f));
         }
 
         public void Start()
         {
             _serverLocatorSenderService.Start();
-            _serverLocatorReceiverService.Start();
+            //_serverLocatorReceiverService.Start();
         }
 
         public void Stop()
         {
             _serverLocatorSenderService.Stop();
-            _serverLocatorReceiverService.Stop();
+            //_serverLocatorReceiverService.Stop();
         }
 
         public void Dispose()
         {
             _serverLocatorSenderService?.Dispose();
-            _serverLocatorReceiverService?.Dispose();
+            //_serverLocatorReceiverService?.Dispose();
         }
     }
 }

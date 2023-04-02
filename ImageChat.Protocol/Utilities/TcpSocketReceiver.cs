@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace ImageChat.Protocol.Utilities
 {
-    internal static class SocketReceiver
+    internal static class TcpSocketReceiver
     {
         public static void WaitDataFromSocket(Socket clientSocket)
         {

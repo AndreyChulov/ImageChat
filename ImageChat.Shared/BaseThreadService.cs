@@ -10,7 +10,6 @@ namespace ImageChat.Shared
         private readonly TimeSpan _loopDelay;
         private bool _isStarted;
         private readonly Thread _serviceThread;
-        private Socket _serviceSocket;
 
         protected BaseThreadService(TimeSpan loopDelay)
         {
@@ -37,13 +36,16 @@ namespace ImageChat.Shared
 
         protected virtual void ServiceWorker()
         {
-            _serviceSocket = CreateServiceSocket();
-
-            while (_isStarted)
+            using (var serviceSocket = CreateServiceSocket())
             {
-                ServiceWorkerLoop(_serviceSocket);
+                while (_isStarted)
+                {
+                    ServiceWorkerLoop(serviceSocket);
                 
-                Task.Delay(_loopDelay);
+                    Task.Delay(_loopDelay);
+                }
+                
+                serviceSocket.Close();
             }
         }
 
@@ -52,9 +54,6 @@ namespace ImageChat.Shared
         public virtual void Dispose()
         {
             Stop();
-            _serviceSocket.Disconnect(false);
-            _serviceSocket.Close();
-            _serviceSocket.Dispose();
         }
     }
 }
