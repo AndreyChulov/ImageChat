@@ -12,7 +12,7 @@ namespace ImageChat.Client.Client
         private readonly IPEndPoint _broadcastIpEndPoint;
         private readonly byte[] _broadcastDatagram;
         
-        public ServerLocatorSenderService(TimeSpan loopDelay, int broadcastPort) : base(loopDelay)
+        public ServerLocatorSenderService(TimeSpan loopDelay, int broadcastPort, int receiverPort) : base(loopDelay)
         {
             IPAddress broadcastAddress = CreateBroadcastAddress();
             
@@ -21,7 +21,7 @@ namespace ImageChat.Client.Client
             _broadcastDatagram =
                 UdpSocketUtility.PrepareDatagramForSendingString(
                     Constants.UdpDatagramSize, 
-                    "Follow the white rabbit!",
+                    $"[{GetLocalIpAddress()}:{receiverPort}]Get image chat server IP&Port",
                     () => throw new ArgumentOutOfRangeException(
                         $"Can not send string [Follow the white rabbit!], data size exceeds datagram size")
                 );
@@ -34,21 +34,6 @@ namespace ImageChat.Client.Client
             socket.EnableBroadcast = true;
 
             return socket;
-        }
-
-        private void BeginConnectCallback(IAsyncResult asyncInfo)
-        {
-            var socketAsyncState = (SocketAsyncState)asyncInfo.AsyncState;
-
-            try
-            {
-                socketAsyncState.Socket.EndConnect(asyncInfo);
-            }
-            catch (ObjectDisposedException)// callback called while dispose/close call
-            {
-            }
-
-            socketAsyncState.ManualResetEvent.Set();
         }
 
         protected override void ServiceWorkerLoop(Socket serviceSocket)
@@ -69,24 +54,34 @@ namespace ImageChat.Client.Client
             {
             }
             
-            Console.WriteLine($@"{DateTime.Now.ToLongTimeString()} -> [ServerLocatorSenderService] broadcast message sent to image chat server.");
+            Console.WriteLine($@"{DateTime.Now.ToLongTimeString()} -> [ServerLocatorSenderService] " + 
+                              "broadcast message sent to image chat server.");
         }
 
         private static IPAddress CreateBroadcastAddress()
         {
-            var localIpAddess = Dns
+            var localIpAddess = GetLocalIpAddress();
+
+            var localIpAddessNumbers = localIpAddess.Split('.');
+            
+            localIpAddessNumbers[3] = "255";
+            
+            var remoteIpAddressInString = localIpAddessNumbers
+                .Aggregate("", (acc, value) => $"{acc}.{value}")
+                .Substring(1);
+            
+            var broadcastAddress = IPAddress.Parse(remoteIpAddressInString);
+            
+            return broadcastAddress;
+        }
+
+        private static string GetLocalIpAddress()
+        {
+            return Dns
                 .GetHostEntry(Dns.GetHostName())
                 .AddressList
                 .First(x => x.AddressFamily == AddressFamily.InterNetwork)
                 .ToString();
-
-            var localIpAddessNumbers = localIpAddess.Split('.');
-            localIpAddessNumbers[3] = "255";
-            var remoteIpAddressInString = localIpAddessNumbers
-                .Aggregate("", (acc, value) => $"{acc}.{value}")
-                .Substring(1);
-            var broadcastAddress = IPAddress.Parse(remoteIpAddressInString);
-            return broadcastAddress;
         }
     }
 }

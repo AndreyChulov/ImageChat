@@ -13,9 +13,11 @@ namespace ImageChat.Client.Client
         public ServerLocatorService()
         {
             _servers = new List<string>();
-            _serverLocatorSenderService = new ServerLocatorSenderService(
-                Constants.ServerLocatorBroadcastDatagramSendTimeout, Constants.ServerLocatorBroadcastPort);
             _serverLocatorReceiverService = new ServerLocatorReceiverService(TimeSpan.FromSeconds(0.5f));
+            _serverLocatorSenderService = new ServerLocatorSenderService(
+                Constants.ServerLocatorBroadcastDatagramSendTimeout, 
+                Constants.ServerLocatorBroadcastPort,
+                _serverLocatorReceiverService.UdpPort);
         }
 
         public void Start()

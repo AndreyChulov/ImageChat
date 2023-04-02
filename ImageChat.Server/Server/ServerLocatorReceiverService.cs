@@ -9,6 +9,7 @@ namespace ImageChat.Server.Server
 {
     public class ServerLocatorReceiverService : BaseThreadService
     {
+        public event EventHandler<string> OnBroadcastMessageReceived; 
         private readonly int _bindingPort;
         
         public ServerLocatorReceiverService(TimeSpan loopDelay) : base(loopDelay)
@@ -34,10 +35,18 @@ namespace ImageChat.Server.Server
                 return;
             }
 
-            byte[] buffer = new byte[Constants.UdpDatagramSize];
-            int size = serviceSocket.Receive(buffer);
-            string message = UdpSocketUtility.GetStringFromDatagram(buffer);
-            Console.WriteLine($@"Server received broadcast message [{message}]");
+            var message = ReceiveMessage(serviceSocket).Result;
+
+            OnBroadcastMessageReceived?.Invoke(this, message);
+        }
+
+        private static async Task<string> ReceiveMessage(Socket serviceSocket)
+        {
+            ArraySegment<byte> buffer = new ArraySegment<byte>(new byte[Constants.UdpDatagramSize]);
+
+            await serviceSocket.ReceiveAsync(buffer, SocketFlags.None);
+
+            return UdpSocketUtility.GetStringFromDatagram(buffer.Array);
         }
     }
 }

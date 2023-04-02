@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using ImageChat.Server.Server;
 
 namespace ImageChat.Server
 {
@@ -8,6 +9,9 @@ namespace ImageChat.Server
         public ImageChatServerForm()
         {
             InitializeComponent();
+            
+            _serverService = new ServerService(TimeSpan.FromSeconds(1));
+            _serverLocatorService = new ServerLocatorService(_serverService.TcpPort);
         }
 
         private void Form1_Load(object sender, EventArgs e)

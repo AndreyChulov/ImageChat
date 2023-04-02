@@ -8,8 +8,12 @@ namespace ImageChat.Client.Client
 {
     public class ServerLocatorReceiverService : BaseThreadService
     {
+        public int UdpPort { get; }
+        
         public ServerLocatorReceiverService(TimeSpan loopDelay) : base(loopDelay)
         {
+            Random randomGenerator = new Random();
+            UdpPort = Constants.ServerLocatorUdpPorts[randomGenerator.Next(0, Constants.ServerLocatorUdpPorts.Length)];
         }
 
         protected override Socket CreateServiceSocket()
