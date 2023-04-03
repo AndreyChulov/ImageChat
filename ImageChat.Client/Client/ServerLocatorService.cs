@@ -23,19 +23,19 @@ namespace ImageChat.Client.Client
         public void Start()
         {
             _serverLocatorSenderService.Start();
-            //_serverLocatorReceiverService.Start();
+            _serverLocatorReceiverService.Start();
         }
 
         public void Stop()
         {
             _serverLocatorSenderService.Stop();
-            //_serverLocatorReceiverService.Stop();
+            _serverLocatorReceiverService.Stop();
         }
 
         public void Dispose()
         {
             _serverLocatorSenderService?.Dispose();
-            //_serverLocatorReceiverService?.Dispose();
+            _serverLocatorReceiverService?.Dispose();
         }
     }
 }

@@ -58,7 +58,6 @@
         <Compile Include="Server\ServerLocatorReceiverService.cs" />
         <Compile Include="Server\ServerLocatorSenderService.cs" />
         <Compile Include="Server\ServerLocatorService.cs" />
-        <Compile Include="Server\ServerLocatorService_old.cs" />
         <Compile Include="Server\ServerService.cs" />
         <EmbeddedResource Include="ImageChatServerForm.resx">
           <DependentUpon>ImageChatServerForm.cs</DependentUpon>

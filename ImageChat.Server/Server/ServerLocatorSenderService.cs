@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading.Tasks;
 using ImageChat.Protocol;
 using ImageChat.Shared;
 
@@ -9,67 +11,68 @@ namespace ImageChat.Server.Server
 {
     public class ServerLocatorSenderService : BaseThreadService
     {
-        private readonly int _broadcastPort;
+        private readonly Queue<KeyValuePair<IPEndPoint, string>> _messagesToSend;
+        private readonly object _messagesToSendLockObject;
         
         public ServerLocatorSenderService(TimeSpan loopDelay) : base(loopDelay)
         {
-            _broadcastPort = Constants.ServerLocatorBroadcastPort;
+            _messagesToSend = new Queue<KeyValuePair<IPEndPoint, string>>();
+            _messagesToSendLockObject = new object();
+        }
+
+        public void SendInfo(IPEndPoint targetLocatorServiceEndPoint, string message)
+        {
+            lock (_messagesToSendLockObject)
+            {
+                _messagesToSend.Enqueue(new KeyValuePair<IPEndPoint, string>(targetLocatorServiceEndPoint, message));
+            }
+            
+            Console.WriteLine($@"Message[{message}] with target endpoint" +
+                              $@"[{targetLocatorServiceEndPoint.Address.MapToIPv4()}:" + 
+                              $@"{targetLocatorServiceEndPoint.Port}] enqueued to send messages queue.");
         }
         
         protected override Socket CreateServiceSocket()
         {
             var socket = new Socket(SocketType.Dgram, ProtocolType.Udp);
 
-            /*socket.EnableBroadcast = true;
-            
-            IPAddress broadcastAddress = CreateBroadcastAddress();
-            IPEndPoint broadcastIpEndPoint = new IPEndPoint(broadcastAddress, _broadcastPort);
-
-            using (SocketAsyncState socketAsyncState = new SocketAsyncState(socket))
-            {
-                socket.BeginConnect(broadcastIpEndPoint, BeginConnectCallback, socketAsyncState);
-                
-                socketAsyncState.ManualResetEvent.WaitOne();
-            }*/
+            socket.EnableBroadcast = true;
             
             return socket;
         }
 
-        private void BeginConnectCallback(IAsyncResult asyncInfo)
-        {
-            var socketAsyncState = (SocketAsyncState)asyncInfo.AsyncState;
-
-            try
-            {
-                socketAsyncState.Socket.EndConnect(asyncInfo);
-            }
-            catch (ObjectDisposedException)// callback called while dispose/close call
-            {
-            }
-
-            socketAsyncState.ManualResetEvent.Set();
-        }
-
         protected override void ServiceWorkerLoop(Socket serviceSocket)
         {
-            //SocketUtility.SendString(serviceSocket, "Follow the white rabbit!", () => { });
+            lock (_messagesToSendLockObject)
+            {
+                if (!_messagesToSend.Any())
+                {
+                    return;
+                }
+                
+                StartSendMessages(serviceSocket).Wait();
+            }
+            
+            Console.WriteLine(@"All enqueue messages sent.");
         }
 
-        private static IPAddress CreateBroadcastAddress()
+        private async Task StartSendMessages(Socket serviceSocket)
         {
-            var localIpAddess = Dns
-                .GetHostEntry(Dns.GetHostName())
-                .AddressList
-                .First(x => x.AddressFamily == AddressFamily.InterNetwork)
-                .ToString();
-
-            var localIpAddessNumbers = localIpAddess.Split('.');
-            localIpAddessNumbers[3] = "255";
-            var remoteIpAddressInString = localIpAddessNumbers
-                .Aggregate("", (acc, value) => $"{acc}.{value}")
-                .Substring(1);
-            var broadcastAddress = IPAddress.Parse(remoteIpAddressInString);
-            return broadcastAddress;
+            while (_messagesToSend.Any())
+            {
+                var messageToSend = _messagesToSend.Dequeue();
+                var datagramArray =
+                    UdpSocketUtility.PrepareDatagramForSendingString(
+                        Constants.UdpDatagramSize, 
+                        messageToSend.Value,
+                        () => throw new ArgumentOutOfRangeException(
+                            $"Can not send string, data size exceeds datagram size")
+                    );
+                var datagram = new ArraySegment<byte>(datagramArray);
+                
+                await serviceSocket.SendToAsync(datagram, SocketFlags.None, messageToSend.Key);
+            }
         }
+        
     }
 }

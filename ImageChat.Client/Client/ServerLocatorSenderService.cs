@@ -60,13 +60,13 @@ namespace ImageChat.Client.Client
 
         private static IPAddress CreateBroadcastAddress()
         {
-            var localIpAddess = GetLocalIpAddress();
+            var localIpAddress = GetLocalIpAddress();
 
-            var localIpAddessNumbers = localIpAddess.Split('.');
+            var localIpAddressNumbers = localIpAddress.Split('.');
             
-            localIpAddessNumbers[3] = "255";
+            localIpAddressNumbers[3] = "255";
             
-            var remoteIpAddressInString = localIpAddessNumbers
+            var remoteIpAddressInString = localIpAddressNumbers
                 .Aggregate("", (acc, value) => $"{acc}.{value}")
                 .Substring(1);
             
