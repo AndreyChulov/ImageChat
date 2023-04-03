@@ -20,21 +20,21 @@ namespace ImageChat.Shared
 
         protected abstract Socket CreateServiceSocket();
         
-        public virtual void Start()
+        public void Start()
         {
             _isStarted = true;
 
             _serviceThread.Start();
         }
 
-        public virtual void Stop()
+        public void Stop()
         {
             _isStarted = false;
 
             _serviceThread.Abort();
         }
 
-        protected virtual void ServiceWorker()
+        private void ServiceWorker()
         {
             using (var serviceSocket = CreateServiceSocket())
             {
@@ -42,7 +42,7 @@ namespace ImageChat.Shared
                 {
                     ServiceWorkerLoop(serviceSocket);
                 
-                    Task.Delay(_loopDelay);
+                    Task.Delay(_loopDelay).Wait();
                 }
                 
                 serviceSocket.Close();

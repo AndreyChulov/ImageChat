@@ -9,7 +9,7 @@ namespace ImageChat.Server.Server
 {
     public class ServerLocatorReceiverService : BaseThreadService
     {
-        public event EventHandler<string> OnBroadcastMessageReceived; 
+        public event EventHandler<string> BroadcastMessageReceived; 
         private readonly int _bindingPort;
         
         public ServerLocatorReceiverService(TimeSpan loopDelay) : base(loopDelay)
@@ -37,7 +37,7 @@ namespace ImageChat.Server.Server
 
             var message = ReceiveMessage(serviceSocket).Result;
 
-            OnBroadcastMessageReceived?.Invoke(this, message);
+            BroadcastMessageReceived?.Invoke(this, message);
         }
 
         private static async Task<string> ReceiveMessage(Socket serviceSocket)

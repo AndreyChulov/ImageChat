@@ -6,34 +6,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c49b247e-3bbd-4fbf-a284-e26f34f9013f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ImageChat.Shared/IpAddressUtility.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ImageChat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ImageChat/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Client/Client/ServerLocatorReceiverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/Client/ServerLocatorReceiverService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Client/Client/ServerLocatorSenderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/Client/ServerLocatorSenderService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Client/Client/ServerLocatorService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/Client/ServerLocatorService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Client/ImageChatClientForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/ImageChatClientForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Client/bin/Debug/ImageChat.Client.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/bin/Debug/ImageChat.Client.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Client/bin/Debug/ImageChat.Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/bin/Debug/ImageChat.Client.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Client/bin/Debug/ImageChat.Protocol.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/bin/Debug/ImageChat.Protocol.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Client/bin/Debug/ImageChat.Protocol.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/bin/Debug/ImageChat.Protocol.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Client/bin/Debug/ImageChat.Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/bin/Debug/ImageChat.Shared.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Client/bin/Debug/ImageChat.Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/bin/Debug/ImageChat.Shared.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Client/obj/Debug/ImageChat.Client.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/obj/Debug/ImageChat.Client.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Client/obj/Debug/ImageChat.Client.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/obj/Debug/ImageChat.Client.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Client/obj/Debug/ImageChat.Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Client/obj/Debug/ImageChat.Client.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Protocol/bin/Debug/ImageChat.Protocol.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Protocol/bin/Debug/ImageChat.Protocol.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Protocol/bin/Debug/ImageChat.Protocol.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Protocol/bin/Debug/ImageChat.Protocol.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Protocol/obj/Debug/ImageChat.Protocol.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Protocol/obj/Debug/ImageChat.Protocol.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Protocol/obj/Debug/ImageChat.Protocol.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Protocol/obj/Debug/ImageChat.Protocol.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageChat.Server/ImageChat.Server.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/ImageChat.Server.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorSenderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorSenderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorReceiverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorReceiverService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageChat.Server/Server/ServerLocatorService_old.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Server/bin/Debug/ImageChat.Protocol.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/bin/Debug/ImageChat.Protocol.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Server/bin/Debug/ImageChat.Protocol.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/bin/Debug/ImageChat.Protocol.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Server/bin/Debug/ImageChat.Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/bin/Debug/ImageChat.Server.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Server/bin/Debug/ImageChat.Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/bin/Debug/ImageChat.Server.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Server/bin/Debug/ImageChat.Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/bin/Debug/ImageChat.Shared.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Server/bin/Debug/ImageChat.Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/bin/Debug/ImageChat.Shared.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageChat.Server/obj/Debug/ImageChat.Server.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/obj/Debug/ImageChat.Server.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Server/obj/Debug/ImageChat.Server.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/obj/Debug/ImageChat.Server.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Server/obj/Debug/ImageChat.Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/obj/Debug/ImageChat.Server.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Server/obj/Debug/ImageChat.Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Server/obj/Debug/ImageChat.Server.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Shared/BaseThreadService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Shared/BaseThreadService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Shared/ImageChat.Shared.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Shared/ImageChat.Shared.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Shared/bin/Debug/ImageChat.Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Shared/bin/Debug/ImageChat.Shared.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Shared/bin/Debug/ImageChat.Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Shared/bin/Debug/ImageChat.Shared.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageChat.Shared/obj/Debug/ImageChat.Shared.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Shared/obj/Debug/ImageChat.Shared.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Shared/obj/Debug/ImageChat.Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Shared/obj/Debug/ImageChat.Shared.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageChat.Shared/obj/Debug/ImageChat.Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ImageChat.Shared/obj/Debug/ImageChat.Shared.pdb" afterDir="false" />
     </list>
@@ -45,9 +52,12 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/38f3335e7e334776b3c928600c54415335df48/58/267b09de/Socket.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4b76c3e709534801a173f34a1d6b3dfc522790/1c/7170e49e/ManualResetEvent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4b76c3e709534801a173f34a1d6b3dfc522790/53/376efba6/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/93a8f82184b4439ca5abff025375fe32564da0/33/0f8e8f47/BinaryReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/93a8f82184b4439ca5abff025375fe32564da0/52/4ee8f124/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/93a8f82184b4439ca5abff025375fe32564da0/bf/987139a6/Task.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ImageChat.Client/Client/ServerLocatorReceiverService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ImageChat.Client/Client/ServerLocatorSenderService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -132,7 +142,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680369793175</updated>
       <workItem from="1680369796581" duration="12978000" />
-      <workItem from="1680440133173" duration="20260000" />
+      <workItem from="1680440133173" duration="31004000" />
     </task>
     <servers />
   </component>
@@ -147,17 +157,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ImageChat.Client/Client/ServerLocatorReceiverService.cs</url>
-          <line>32</line>
-          <properties documentPath="Z:\Мой диск\GitHub\ImageChat\ImageChat.Client\Client\ServerLocatorReceiverService.cs" initialLine="32" containingFunctionPresentation="method 'ServiceWorkerLoop'">
+          <url>file://$PROJECT_DIR$/ImageChat.Client/ImageChatClientForm.cs</url>
+          <line>23</line>
+          <properties documentPath="Z:\Мой диск\GitHub\ImageChat\ImageChat.Client\ImageChatClientForm.cs" initialLine="23" containingFunctionPresentation="method 'Form1_FormClosing'">
             <startOffsets>
-              <option value="989" />
+              <option value="655" />
             </startOffsets>
             <endOffsets>
-              <option value="1025" />
+              <option value="684" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="19" />
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

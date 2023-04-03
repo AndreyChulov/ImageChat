@@ -14,14 +14,14 @@ namespace ImageChat.Client.Client
         
         public ServerLocatorSenderService(TimeSpan loopDelay, int broadcastPort, int receiverPort) : base(loopDelay)
         {
-            IPAddress broadcastAddress = CreateBroadcastAddress();
+            IPAddress broadcastAddress = IpAddressUtility.GetBroadcastAddress();
             
             _broadcastIpEndPoint = new IPEndPoint(broadcastAddress, broadcastPort);
             
             _broadcastDatagram =
                 UdpSocketUtility.PrepareDatagramForSendingString(
                     Constants.UdpDatagramSize, 
-                    $"[{GetLocalIpAddress()}:{receiverPort}]Get image chat server IP&Port",
+                    $"[{IpAddressUtility.GetLocalIpAddress()}:{receiverPort}]Get image chat server IP&Port",
                     () => throw new ArgumentOutOfRangeException(
                         $"Can not send string [Follow the white rabbit!], data size exceeds datagram size")
                 );
@@ -58,30 +58,5 @@ namespace ImageChat.Client.Client
                               "broadcast message sent to image chat server.");
         }
 
-        private static IPAddress CreateBroadcastAddress()
-        {
-            var localIpAddress = GetLocalIpAddress();
-
-            var localIpAddressNumbers = localIpAddress.Split('.');
-            
-            localIpAddressNumbers[3] = "255";
-            
-            var remoteIpAddressInString = localIpAddressNumbers
-                .Aggregate("", (acc, value) => $"{acc}.{value}")
-                .Substring(1);
-            
-            var broadcastAddress = IPAddress.Parse(remoteIpAddressInString);
-            
-            return broadcastAddress;
-        }
-
-        private static string GetLocalIpAddress()
-        {
-            return Dns
-                .GetHostEntry(Dns.GetHostName())
-                .AddressList
-                .First(x => x.AddressFamily == AddressFamily.InterNetwork)
-                .ToString();
-        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ImageChat.Client
@@ -12,7 +13,10 @@ namespace ImageChat.Client
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            _serverLocatorService.Start();
+            Task
+                .Run(() => _serverLocatorService.Start())
+                .ContinueWith(_ => Task.Delay(TimeSpan.FromSeconds(10)).Wait())
+                .ContinueWith(_ => _serverLocatorService.Stop());
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

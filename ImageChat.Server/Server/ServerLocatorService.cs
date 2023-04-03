@@ -20,7 +20,7 @@ namespace ImageChat.Server.Server
             _serverLocatorReceiverService = new ServerLocatorReceiverService(
                 Constants.ServerLocatorBroadcastDatagramReceiveTimeout);
             
-            _serverLocatorReceiverService.OnBroadcastMessageReceived += 
+            _serverLocatorReceiverService.BroadcastMessageReceived += 
                 ServerLocatorReceiverService_OnBroadcastMessageReceived;
         }
 
@@ -38,7 +38,7 @@ namespace ImageChat.Server.Server
                 case "Get image chat server IP&Port":
                     _serverLocatorSenderService.SendInfo(
                         new IPEndPoint(IPAddress.Parse(clientIp), Convert.ToInt32(clientPort)),
-                        $"[:{_serverServicePort}]Server info"
+                        $"[{IpAddressUtility.GetLocalIpAddress()}:{_serverServicePort}]Server info"
                     );
                     break;
                 default:
