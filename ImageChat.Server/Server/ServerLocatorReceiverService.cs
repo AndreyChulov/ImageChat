@@ -14,7 +14,10 @@ namespace ImageChat.Server.Server
         
         public ServerLocatorReceiverService(TimeSpan loopDelay) : base(loopDelay)
         {
-            _bindingPort = Constants.ServerLocatorBroadcastPort;
+            Random randomGenerator = new Random();
+            
+            _bindingPort = Constants.ServerLocatorBroadcastPorts
+                    [randomGenerator.Next(0, Constants.ServerLocatorBroadcastPorts.Length)];
         }
 
         protected override Socket CreateServiceSocket()

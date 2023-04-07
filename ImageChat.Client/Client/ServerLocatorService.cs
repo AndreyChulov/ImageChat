@@ -17,7 +17,7 @@ namespace ImageChat.Client.Client
             _serverLocatorReceiverService = new ServerLocatorReceiverService(TimeSpan.FromSeconds(0.5f));
             _serverLocatorSenderService = new ServerLocatorSenderService(
                 Constants.ServerLocatorBroadcastDatagramSendTimeout, 
-                Constants.ServerLocatorBroadcastPort,
+                Constants.ServerLocatorBroadcastPorts,
                 _serverLocatorReceiverService.UdpPort);
             
             _serverLocatorReceiverService.UdpMessageReceived += ServerLocatorReceiverService_OnUdpMessageReceived;
@@ -42,8 +42,7 @@ namespace ImageChat.Client.Client
                      
                      break;
                  default:
-                     Console.WriteLine($@"{DateTime.Now.ToLongTimeString()} -> [ServerLocatorSenderService] " +
-                                       @"Unknown message received from udp");
+                     Logger.AddTypedVerboseMessage(GetType(), @"Unknown message received from udp");
                      break;
              }
         }
@@ -52,18 +51,21 @@ namespace ImageChat.Client.Client
         {
             _serverLocatorSenderService.Start();
             _serverLocatorReceiverService.Start();
+            Logger.AddVerboseMessage("Server locator service started");
         }
 
         public void Stop()
         {
             _serverLocatorSenderService.Stop();
             _serverLocatorReceiverService.Stop();
+            Logger.AddVerboseMessage("Server locator service stopped");
         }
 
         public void Dispose()
         {
             _serverLocatorSenderService?.Dispose();
             _serverLocatorReceiverService?.Dispose();
+            Logger.AddVerboseMessage("Server locator service disposed");
         }
     }
 }

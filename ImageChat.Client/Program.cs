@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ImageChat.Shared;
 
 namespace ImageChat.Client
 {
@@ -15,18 +16,14 @@ namespace ImageChat.Client
         [STAThread]
         static void Main()
         {
-            using (FileStream consoleStream = new FileStream("client_console.log", FileMode.Create))
-            using (TextWriter consoleWriter = new StreamWriter(consoleStream))
-            {
-                Console.SetOut(consoleWriter);
-                
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new ImageChatClientForm());
-                
-                consoleWriter.Flush();
-                consoleStream.Flush();
-            }
+            Logger.Initialize(
+                $@"[{DateTime.Now.ToLongTimeString().Replace(':', '.')}]client_console.log");
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new ImageChatClientForm());
+
+            Logger.FreeUpResources();
         }
     }
 }

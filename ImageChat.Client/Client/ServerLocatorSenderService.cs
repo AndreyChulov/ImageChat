@@ -9,14 +9,17 @@ namespace ImageChat.Client.Client
 {
     public class ServerLocatorSenderService : BaseThreadService
     {
-        private readonly IPEndPoint _broadcastIpEndPoint;
+        private readonly IPEndPoint[] _broadcastIpEndPoints;
         private readonly byte[] _broadcastDatagram;
         
-        public ServerLocatorSenderService(TimeSpan loopDelay, int broadcastPort, int receiverPort) : base(loopDelay)
+        public ServerLocatorSenderService(TimeSpan loopDelay, int[] broadcastPorts, int receiverPort) : base(loopDelay)
         {
             IPAddress broadcastAddress = IpAddressUtility.GetBroadcastAddress();
-            
-            _broadcastIpEndPoint = new IPEndPoint(broadcastAddress, broadcastPort);
+
+            _broadcastIpEndPoints = 
+                broadcastPorts
+                    .Select(port => new IPEndPoint(broadcastAddress, port))
+                    .ToArray(); 
             
             _broadcastDatagram =
                 UdpSocketUtility.PrepareDatagramForSendingString(
@@ -38,8 +41,11 @@ namespace ImageChat.Client.Client
 
         protected override void ServiceWorkerLoop(Socket serviceSocket)
         {
-            serviceSocket.BeginSendTo(_broadcastDatagram, 0, Constants.UdpDatagramSize, SocketFlags.None, 
-                _broadcastIpEndPoint, SendToCallback,serviceSocket);
+            foreach (var broadcastIpEndPoint in _broadcastIpEndPoints)
+            {
+                serviceSocket.BeginSendTo(_broadcastDatagram, 0, Constants.UdpDatagramSize, SocketFlags.None, 
+                                broadcastIpEndPoint, SendToCallback, serviceSocket);
+            }
         }
 
         private void SendToCallback(IAsyncResult asyncData)
@@ -54,8 +60,7 @@ namespace ImageChat.Client.Client
             {
             }
             
-            Console.WriteLine($@"{DateTime.Now.ToLongTimeString()} -> [ServerLocatorSenderService] " + 
-                              "broadcast message sent to image chat server.");
+            Logger.AddTypedVerboseMessage(GetType(), "Broadcast message sent to image chat server.");
         }
 
     }

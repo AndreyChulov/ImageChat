@@ -42,8 +42,7 @@ namespace ImageChat.Server.Server
                     );
                     break;
                 default:
-                    Console.WriteLine($@"{DateTime.Now.ToLongTimeString()} -> [ServerLocatorSenderService] " +
-                                      @"Unknown command received from broadcast");
+                    Logger.AddTypedVerboseMessage(GetType(), "Unknown command received from broadcast");
                     break;
                     
             }
@@ -53,18 +52,21 @@ namespace ImageChat.Server.Server
         {
             _serverLocatorSenderService.Start();
             _serverLocatorReceiverService.Start();
+            Logger.AddVerboseMessage("Server locator service started");
         }
 
         public void Stop()
         {
             _serverLocatorSenderService.Stop();
             _serverLocatorReceiverService.Stop();
+            Logger.AddVerboseMessage("Server locator service stopped");
         }
 
         public void Dispose()
         {
             _serverLocatorSenderService?.Dispose();
             _serverLocatorReceiverService?.Dispose();
+            Logger.AddVerboseMessage("Server locator service disposed");
         }
     }
 }

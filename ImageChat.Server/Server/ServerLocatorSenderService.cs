@@ -26,10 +26,10 @@ namespace ImageChat.Server.Server
             {
                 _messagesToSend.Enqueue(new KeyValuePair<IPEndPoint, string>(targetLocatorServiceEndPoint, message));
             }
-            
-            Console.WriteLine($@"Message[{message}] with target endpoint" +
-                              $@"[{targetLocatorServiceEndPoint.Address.MapToIPv4()}:" + 
-                              $@"{targetLocatorServiceEndPoint.Port}] enqueued to send messages queue.");
+            Logger.AddTypedVerboseMessage(GetType(), 
+                $@"Message[{message}] with target endpoint" +
+                $@"[{targetLocatorServiceEndPoint.Address.MapToIPv4()}:" + 
+                $@"{targetLocatorServiceEndPoint.Port}] enqueued to send messages queue.");
         }
         
         protected override Socket CreateServiceSocket()
@@ -53,8 +53,8 @@ namespace ImageChat.Server.Server
                 StartSendMessages(serviceSocket).Wait();
             }
             
-            Console.WriteLine(@"All enqueue messages sent.");
-        }
+            Logger.AddTypedVerboseMessage(GetType(), @"All enqueue messages sent.");
+       }
 
         private async Task StartSendMessages(Socket serviceSocket)
         {
